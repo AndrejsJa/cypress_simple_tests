@@ -1,14 +1,11 @@
 beforeEach(() => {
     cy.visit('cypress/fixtures/registration_form_2.html')
 })
-
 /*
 Assignement 4: add content to the following tests
 */
 
 describe('Section 1: Functional tests', () => {
-
-
     it('User can use only same both first and validation passwords', () => {
         // Fill in all mandatory fields
         cy.get('#username').type('Andrejs_Ja')
@@ -27,13 +24,9 @@ describe('Section 1: Functional tests', () => {
 
         // Assert that error message is visible
         cy.get('#password_error_message').should('have.css', 'display', 'none')
-
     })
 
-
-
     it('User can submit form with all fields added', () => {
-
         cy.get('#username').type('Andrejs_Ja')
         cy.get('#email').type('fixspur@mail.com')
         cy.get('[data-cy="name"]').type('Andrejs')
@@ -55,7 +48,6 @@ describe('Section 1: Functional tests', () => {
         // Assert that after submitting the form system show successful message
     })
     it('User can submit form with valid data and only mandatory fields added', () => {
-
         cy.get('#username').type('Andrejs_Ja')
         cy.get('#email').type('fixspur@mail.com')
         cy.get('[data-cy="name"]').type('Andrejs')
@@ -141,7 +133,6 @@ describe('Section 1: Functional tests', () => {
         cy.get('img').invoke('height').should('be.lessThan', 178)
             .and('be.greaterThan', 100)
     })
-
     it('Check navigation part', () => {
         cy.get('nav').children().should('have.length', 2)
         // Get navigation element, find siblings that contains h1 and check if it has Registration form in string
@@ -197,7 +188,7 @@ describe('Section 1: Functional tests', () => {
 })
 function inputValidData(username) {
     cy.log('Username will be filled')
-    cy.get('input[data-testid="user"]').type(username)
+    cy.get('input[data-testid="user"]').type(Andrejs_Ja)
     cy.get('#email').type('fixspur@gmail.com')
     cy.get('[data-cy="name"]').type('Andrejs')
     cy.get('#lastName').type('Jarmolovics')

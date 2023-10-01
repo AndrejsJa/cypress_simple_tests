@@ -108,11 +108,11 @@ describe('Visual tests for registration form 3', () => {
 
     it('Accepts Privacy and Cookie Policies', () => {
         // Check the privacy policy checkbox
-        cy.get('#privacy-policy-checkbox').check(); // Replace with the actual selector for the privacy policy checkbox
+        cy.get('#privacy-policy-checkbox').check();
 
         // Check the cookie policy checkbox
-        cy.get('#cookie-policy-checkbox').check(); // Replace with the actual selector for the cookie policy checkbox
-
+        cy.get('#cookie-policy-checkbox').check();
+        
         // Add assertions to verify that the checkboxes are checked
         cy.get('#privacy-policy-checkbox').should('be.checked');
         cy.get('#cookie-policy-checkbox').should('be.checked');
